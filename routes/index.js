@@ -1,13 +1,16 @@
 const router = require('express').Router();
 const getLogger = require('../lib/logger');
+
 const logger = getLogger('routes/index');
 
 logger.verbose('adding / routes...');
 
-router.get('/', (req, res, next) => res.render('index', {
-  title: 'Welcome to Express',
-  message: 'Hello, World!'
-}));
+router.get('/', (req, res) =>
+  res.render('index', {
+    title: 'Welcome to Express',
+    message: 'Hello, World!',
+  })
+);
 
 /**
  * Add more routes here
