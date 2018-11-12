@@ -6,6 +6,7 @@
     "index.js": true,
     "webpack.config.js": true,
     "**/.vscode": true,
+    "**/.eslintrc.js": true,
     "**/.gitignore": true,
     "**/node_modules": true,
     "**/controllers": true,
@@ -16,5 +17,25 @@
     "**/lib/errors.js": true,
     "**/lib/logger.js": true,
     "**/views/error.pug": true,
-  }
+  },
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": true,
+  "breadcrumbs.enabled": true,
+  "git.ignoreLimitWarning": true
 }
