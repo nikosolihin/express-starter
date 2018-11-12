@@ -7,6 +7,6 @@ const input = document.querySelector('input');
 const submitForm = e => {
   e.preventDefault();
   title.innerText = `Hello, ${input.value || 'Bob Marley'}!`;
-}
+};
 
 document.querySelector('.form').addEventListener('submit', submitForm);
