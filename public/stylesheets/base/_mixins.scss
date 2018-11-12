@@ -1,0 +1,85 @@
+/******************************
+ * Functions
+ ******************************/
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min !=0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+/******************************
+ * Mixins
+ ******************************/
+/** Breakpoints */
+@mixin from($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+@mixin to($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+@mixin at($name, $breakpoints: $grid-breakpoints) {
+  @include from($name, $breakpoints) {
+    @include to($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+@mixin between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  @include from($lower, $breakpoints) {
+    @include to($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+@mixin hover($before: inherit, $after: darken($before, 11%)) {
+  transition: all .125s ease-in-out;
+  color: $before;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $after;
+    text-decoration: none;
+  }
+}
+
+@mixin square($height: 100%) {
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: $height;
+  }
+}

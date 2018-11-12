@@ -1,0 +1,45 @@
+/**
+ * VARIABLES
+ */
+@import "base/variables";
+
+/**
+ * TOOLS
+ * Mixins and functions
+ */
+@import "base/mixins";
+
+/**
+ * GENERIC
+ * Includes all the 3rd-party CSS used throughout the site.
+ */
+@import '~sanitize.css';
+@import "base/fontface";
+
+/**
+ * ELEMENTS
+ * For raw HTML elements. Bare tag styles, not classes or 
+ * IDs.
+ */
+@import "base/elements";
+@import "base/typography";
+
+/**
+ * OBJECTS
+ * For layout-driven structures (wrapper, containers).
+ */
+@import "base/layout";
+
+/**
+ * COMPONENTS
+ * UI Components styling.
+ */
+@import "components/header";
+@import "components/footer";
+@import "components/button";
+
+/**
+ * TRUMPS
+ * Utilities overrides and helper classes
+ */
+@import "base/trumps";

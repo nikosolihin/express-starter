@@ -1,0 +1,17 @@
+.button {
+  color: $white;
+  background-color: $blue;
+  border: 0;
+  border-radius: 6px;
+  padding: .75rem 1.5rem;
+  transition: background-color .17s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: darken($blue, 3%);
+  }
+}

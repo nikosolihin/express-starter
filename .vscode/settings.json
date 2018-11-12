@@ -1,0 +1,20 @@
+{
+  "files.exclude": {
+    "now.json": true,
+    "app.js": true,
+    "public/dist": true,
+    "index.js": true,
+    "webpack.config.js": true,
+    "**/.vscode": true,
+    "**/.gitignore": true,
+    "**/node_modules": true,
+    "**/controllers": true,
+    "**/package-lock.json": true,
+    "**/server.js": true,
+    "lib": true,
+    "**/lib/helpers.js": true,
+    "**/lib/errors.js": true,
+    "**/lib/logger.js": true,
+    "**/views/error.pug": true,
+  }
+}

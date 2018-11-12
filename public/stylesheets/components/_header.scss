@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+
+  &__logo {
+    margin-right: 1.5rem;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &__link {
+    @include hover($gray-700);
+    padding: .5rem;
+  }
+}
